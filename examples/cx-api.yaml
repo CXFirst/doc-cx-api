@@ -1,0 +1,440 @@
+---
+openapi: 3.0.1
+info:
+  title: CXFirst API V1
+  version: v1
+paths:
+  "/hierarchies":
+    get:
+      summary: Retrieves the list of configured hierarchies
+      tags:
+      - Hierarchies
+      responses:
+        '200':
+          description: Hierarchies
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                    - hierarchy_branches:
+                      - _link:
+                          self: "/api/v1/hierarchies/arbre-1/branches/id_region"
+                        slug: id_region
+                        title: id_region
+                      - _link:
+                          self: "/api/v1/hierarchies/arbre-1/branches/id_agence"
+                        slug: id_agence
+                        title: id_agence
+                      root_hierarchy_title: Enseigne
+                      slug: arbre-1
+  "/hierarchies/{slug}":
+    get:
+      summary: Retrieves a hierarchy by slug
+      tags:
+      - Hierarchies
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        description: Slug of the hierarchy
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Hierarchy
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                      hierarchy_branches:
+                      - _link:
+                          self: "/api/v1/hierarchies/arbre-1/branches/id_region"
+                        slug: id_region
+                        title: id_region
+                      - _link:
+                          self: "/api/v1/hierarchies/arbre-1/branches/id_agence"
+                        slug: id_agence
+                        title: id_agence
+                      root_hierarchy_title: Enseigne
+                      slug: arbre-1
+        '404':
+          description: Not found
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    status: 404
+                    message: Not found
+  "/hierarchies/{hierarchy_slug}/branches/{branch_slug}":
+    get:
+      summary: Retrieve a hierarchy branch by slug
+      tags:
+      - Hierarchies
+      parameters:
+      - name: hierarchy_slug
+        in: path
+        required: true
+        description: Slug of the hierarchy
+        schema:
+          type: string
+      - name: branch_slug
+        in: path
+        required: true
+        description: Slug of the branch to retrieve
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Hierarchy Branch
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                      _link:
+                        self: "/api/v1/hierarchies/arbre-1/branches/id_agence"
+                      slug: id_agence
+                      title: id_agence
+                      values:
+                      - code: R_2_4
+                        title: DEFENSE
+                      - code: R_1_4
+                        title: PARIS
+        '404':
+          description: Not found
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    status: 404
+                    message: Not found
+  "/sites":
+    get:
+      summary: Retrieves the list of sites
+      tags:
+      - Sites
+      parameters:
+      - name: code
+        in: query
+        description: Filter by code
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: 'Number of items per page (max : 100)'
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Sites
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                    - code: LADEFENSE
+                      id: 682f3f736b1293db182e56eb
+                      network_manager_id: ''
+                    - code: ROUBAIX
+                      id: 682f3f746b1293db182e56ef
+                      network_manager_id: ''
+                    - code: MARSEILLE
+                      id: 682f3f746b1293db182e56f0
+                      network_manager_id: ''
+                    meta:
+                      total: 3
+                      total_pages: 1
+                      current_page: 1
+                      per_page: 5
+                      next: 
+                      previous: 
+  "/sites/{code}":
+    get:
+      summary: Retrieves a list of sites
+      tags:
+      - Sites
+      parameters:
+      - name: code
+        in: path
+        description: Site code
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Site
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                      code: MARSEILLE
+                      id: 682f3f746b1293db182e5702
+                      network_manager_id: ''
+        '404':
+          description: Not found
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    status: 404
+                    message: Not found
+  "/streams/{stream_slug}/pages":
+    get:
+      summary: List pages
+      tags:
+      - Pages
+      parameters:
+      - name: stream_slug
+        in: path
+        description: Slug of stream
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                    - _links:
+                        self: "/api/v1/streams/sondage/pages/scores"
+                      slug: scores
+                      title: Scores
+                      type: scores_page
+        '404':
+          description: Not found
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    status: 404
+                    message: Not found
+  "/streams/{stream_slug}/pages/{slug}":
+    get:
+      summary: show page
+      tags:
+      - Pages
+      parameters:
+      - name: stream_slug
+        in: path
+        description: Slug of stream
+        required: true
+        schema:
+          type: string
+      - name: slug
+        in: path
+        description: Slug of page
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                      _links:
+                        self: "/api/v1/streams/sondage/pages/scores"
+                      slug: scores
+                      title: Scores
+                      type: scores_page
+        '404':
+          description: Not found
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    status: 404
+                    message: Not found
+  "/streams/{stream_slug}/data":
+    get:
+      summary: Get a list of raw data
+      tags:
+      - Data
+      parameters:
+      - name: stream_slug
+        in: path
+        description: Stream slug
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: Page
+        schema:
+          type: integer
+      - name: per_page
+        in: query
+        description: Per page
+        schema:
+          type: integer
+      - name: from
+        in: query
+        description: yyyy-mm-dd
+        schema:
+          type: string
+      - name: to
+        in: query
+        description: yyyy-mm-dd
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                    - _links:
+                        self: "/api/v1/streams/sondage/data/682f3f776b1293db182e57eb"
+                        public_url: "/q/j78h31lgdioil574"
+                        show: "/streams/sondage/answers/682f3f776b1293db182e57eb/questionnaire"
+                      created_at: '2025-05-22T17:15:03.037+02:00'
+                      date: '2025-05-22'
+                      has_alert: false
+                      id: 682f3f776b1293db182e57eb
+                      site:
+                        code: LADEFENSE
+                        id: 682f3f766b1293db182e57ca
+                        network_manager_id: ''
+                      state: Non traitée
+                      unique_identifier: unique_id_1_1
+                      user: 
+                      values:
+                        CITY: LADEFENSE
+                        entry_header: '1'
+                        DATE_PERIOD: '2018-01-01'
+                        PLAY_UNO: '1'
+                        PLAY_MONOPOLY: '1'
+                    - _links:
+                        self: "/api/v1/streams/sondage/data/682f3f776b1293db182e57f6"
+                        public_url: "/q/bhvsvgx1v45gd2ly"
+                        show: "/streams/sondage/answers/682f3f776b1293db182e57f6/questionnaire"
+                      created_at: '2025-05-22T17:15:03.154+02:00'
+                      date: '2025-05-22'
+                      has_alert: true
+                      id: 682f3f776b1293db182e57f6
+                      site:
+                        code: LADEFENSE
+                        id: 682f3f766b1293db182e57ca
+                        network_manager_id: ''
+                      state: Non traitée
+                      unique_identifier: unique_id_2_2
+                      user: 
+                      values:
+                        CITY: LADEFENSE
+                        entry_header: '1'
+                        DATE_PERIOD: '2018-01-01'
+                        PLAY_UNO: '1'
+                        PLAY_MONOPOLY: '1'
+                    meta:
+                      total: 0
+                      total_pages: 0
+                      current_page: 1
+                      per_page: 50
+                      next: 
+                      previous: 
+        '404':
+          description: Not found
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    status: 404
+                    message: Not found
+  "/streams":
+    get:
+      summary: Retrieves a list of streams
+      tags:
+      - Streams
+      responses:
+        '200':
+          description: Streams
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                    - _links:
+                        self: "/api/v1/streams/sondage"
+                        pages: "/api/v1/streams/sondage/pages"
+                        data: "/api/v1/streams/sondage/data"
+                      slug: sondage
+                      stream_type: single
+                      title: Sondages
+  "/streams/{slug}":
+    get:
+      summary: Retrieve the stream information
+      tags:
+      - Streams
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        description: Slug of the stream
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Stream
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    data:
+                      _links:
+                        self: "/api/v1/streams/sondage"
+                        pages: "/api/v1/streams/sondage/pages"
+                        data: "/api/v1/streams/sondage/data"
+                      pages:
+                      - _links:
+                          self: "/api/v1/streams/sondage/pages/scores"
+                        slug: scores
+                        title: Scores
+                        type: scores_page
+                      slug: sondage
+                      stream_type: single
+                      title: Sondages
+        '404':
+          description: Not found
+          content:
+            application/json:
+              examples:
+                example:
+                  value:
+                    status: 404
+                    message: Not found
+servers:
+- url: https://{subdomain}.mycxfirst.com/api/v1
+  variables:
+    subdomain:
+      default: demo

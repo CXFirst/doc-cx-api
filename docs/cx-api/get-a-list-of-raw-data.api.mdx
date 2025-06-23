@@ -1,0 +1,71 @@
+---
+id: get-a-list-of-raw-data
+title: "Get a list of raw data"
+description: "Get a list of raw data"
+sidebar_label: "Get a list of raw data"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVttu2zgQ/RVhnnaxcnSJHad6Cxq3CJBNjDZdNAgMgZZGMhuJVEjKiWDog/Y79scWQ8m3JA2abBe7fjE5Gp658HBmVmBYriG6gVNmGMxcqJhiJRpUJF2BYCVCBNooZGWsizoHF7iACCpmFuBCijpRvDJckvCz1XN6PYV3NVeYQmRUjS7oZIElg2gFpql6WC5yaFt3Y6liOa5N3NWomic2pp3GEzAuDOao9tFQxT+AiMqpXoGaKVm+jNg0TTMoy0GaPof5TNhG/hTAGSVdV1Jo1PQ99H3628fSdZKg1lldgAuJFAaFIS1WVQVPGGl53zSprgAfWFkVHVi/puWSFbVdpEQbIkpccHFr1TQWGUTgsYp7y8DrqKM9LUXKcvTohHd0HGaH2Xh8NA/Cd4fpPDgOcTTGObhQ1fOCJ3GtCgK5876NjxeHQZGnXPJiNB5S/At5Tx8fQzOh71Hp76J7dzVqCk8wrhBaFxKFzGAaMwMRhH44GvijQRheBeMoGEX+4YF/OP7NDyPfpxthBvfUwIUF0zErUBmIMlZodIGnEMEL8WlubOYSmRLa+cnp5MPk4vME9o8e7R9NGLgg0NxLdRuXTLAcVWz1KQxtOtcupHCMYtz89SeRuRb8rsaYpygMzzgqiLayOIgD0tEkFnVRuN2t2jt8f3Z1/cg5FEY18QJZanHo7OnJ1SSeTj6dXZ7avATHAz8Y+PRpen5yHX+5uOw17fb3y4vL6eX5tZVZ8v8M0mRHz5BmvljqZf4QLIejPA2L5s2kyY7eQJpgNPxR0nSF8QXO2PD+N5wJ4/A/5czMhRJNV/qkYQVEvtutbJnXdp/USqEwXeGPAnfbBaKRTxl5MGvvK4VLLmvd7dvu58LQHz4tmxfSOJmsRfrPqyblnowO/SEFpLV1bsfCxpN9Fz6icZhTcG0cmTmK3Tu2/tqkLCTdbI6GngP15h2ur3b6d+v1ZzSq5brNdw9nYUylI89b6XqeypJx0R6UTfKQcaXNQSLL/nkCXbvibN6HuFHvkpaxuqCnkWIpKZIZdbZM2kvjhlIB779+IEznZHrm/GHxUOkuxmVA7KykNiWzgH2H/G7seynatESDD8arCnKqdbv4Vn1ebvpxRoML0f5kk/ZT0EJqQ4qr1Zxp/KKKtiVx15spYSnXFH66KfuPvNgQZD2uPOvWLTbbkadnBz3OV+Fvh5eXbGwHoTfa2ZtAXrDUD0f/shU7L21tzLaMfOX1/PKpH1J/dfaH12eN90Imml3za6d2udTOWhfWle9m1WucJAlWZufsk+rRl7juNX+cXEHb/g05dMjZ
+sidebar_class_name: "get api-method"
+info_path: docs/cx-api/cxfirst-api-v-1
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a list of raw data"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/streams/{stream_slug}/data"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a list of raw data
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"stream_slug","in":"path","description":"Stream slug","required":true,"schema":{"type":"string"}},{"name":"page","in":"query","description":"Page","schema":{"type":"integer"}},{"name":"per_page","in":"query","description":"Per page","schema":{"type":"integer"}},{"name":"from","in":"query","description":"yyyy-mm-dd","schema":{"type":"string"}},{"name":"to","in":"query","description":"yyyy-mm-dd","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"successful","content":{"application/json":{"examples":{"example":{"value":{"data":[{"_links":{"self":"/api/v1/streams/sondage/data/682f3f776b1293db182e57eb","public_url":"/q/j78h31lgdioil574","show":"/streams/sondage/answers/682f3f776b1293db182e57eb/questionnaire"},"created_at":"2025-05-22T17:15:03.037+02:00","date":"2025-05-22","has_alert":false,"id":"682f3f776b1293db182e57eb","site":{"code":"LADEFENSE","id":"682f3f766b1293db182e57ca","network_manager_id":""},"state":"Non traitée","unique_identifier":"unique_id_1_1","user":null,"values":{"CITY":"LADEFENSE","entry_header":"1","DATE_PERIOD":"2018-01-01","PLAY_UNO":"1","PLAY_MONOPOLY":"1"}},{"_links":{"self":"/api/v1/streams/sondage/data/682f3f776b1293db182e57f6","public_url":"/q/bhvsvgx1v45gd2ly","show":"/streams/sondage/answers/682f3f776b1293db182e57f6/questionnaire"},"created_at":"2025-05-22T17:15:03.154+02:00","date":"2025-05-22","has_alert":true,"id":"682f3f776b1293db182e57f6","site":{"code":"LADEFENSE","id":"682f3f766b1293db182e57ca","network_manager_id":""},"state":"Non traitée","unique_identifier":"unique_id_2_2","user":null,"values":{"CITY":"LADEFENSE","entry_header":"1","DATE_PERIOD":"2018-01-01","PLAY_UNO":"1","PLAY_MONOPOLY":"1"}}],"meta":{"total":0,"total_pages":0,"current_page":1,"per_page":50,"next":null,"previous":null}}}}}}},"404":{"description":"Not found","content":{"application/json":{"examples":{"example":{"value":{"status":404,"message":"Not found"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

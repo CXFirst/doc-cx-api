@@ -1,0 +1,71 @@
+---
+id: retrieves-a-hierarchy-by-slug
+title: "Retrieves a hierarchy by slug"
+description: "Retrieves a hierarchy by slug"
+sidebar_label: "Retrieves a hierarchy by slug"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVE1r3DAQ/SvmnVpQ603Zk26hpE0vpaQfFMKyzNqzthpbcqTxEmP834ts74eblkLri4Xm6c2bNyP1ECoC9D1uDXvyWWk4YKPQkKeahX0M9rBUMzRC1RZQMBYaDUkJBc+PrfGcQ4tvWSHnkHnTiHER9Llqi8TtEyk5KecMHRRCVnJN0D2ka0Zm8cYWGIZNpAyNs4FDjL9ZreJvSXt7QZU5K2wlgqhpKpNRBKU/QkT24Ceqm2rimtdxeaCqHRc5yajjpG6782SzkqfCt5WxDzEeuNpDI6XGpIertDzblZLfeX51lR4Ppibfei6i1EFNnmmc9xTESFSBS9y/p6KCbcbLVPPeItURFx12Trbnio+gGxvYFDaem6nmfBimT2G9Wj9vx0cnyd61Nv//dgQhaQP0erVWqDkEKniR4aRkKeGOxRs+cEjoPGjJrkvmka1ZSpdDo2CBmoZXY+FtH6FDrJ394Tj4ra+gUYo0QadpH9pd7moydnhdd9nT3vggrzNXz72CwoG8od1c4Qk+ebanthJo5Fy7WMgmXqW9G6/B3IK3399FzuT604fk28jHPkwlHq5ijxsXpKaRcL6Ufyt9YdTpwgk/SdpUUdugpjL72ZZ7XNgCBT0SbRRKFySG+35Hgb/6ahji9mPLvoO+35yrH73LTYjrHHpPVfj1bejPo4IXd/Mr8jL504vxW9nzJtludH6cIUDhgbvjazVsBoWSKWc/ippC11nGjVwcejarsTmnoXl/8wXD8BMJ98lM
+sidebar_class_name: "get api-method"
+info_path: docs/cx-api/cxfirst-api-v-1
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Retrieves a hierarchy by slug"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/hierarchies/{slug}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a hierarchy by slug
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"slug","in":"path","required":true,"description":"Slug of the hierarchy","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Hierarchy","content":{"application/json":{"examples":{"example":{"value":{"data":{"hierarchy_branches":[{"_link":{"self":"/api/v1/hierarchies/arbre-1/branches/id_region"},"slug":"id_region","title":"id_region"},{"_link":{"self":"/api/v1/hierarchies/arbre-1/branches/id_agence"},"slug":"id_agence","title":"id_agence"}],"root_hierarchy_title":"Enseigne","slug":"arbre-1"}}}}}}},"404":{"description":"Not found","content":{"application/json":{"examples":{"example":{"value":{"status":404,"message":"Not found"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

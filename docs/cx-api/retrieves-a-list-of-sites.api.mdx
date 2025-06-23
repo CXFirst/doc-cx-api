@@ -1,0 +1,71 @@
+---
+id: retrieves-a-list-of-sites
+title: "Retrieves a list of sites"
+description: "Retrieves a list of sites"
+sidebar_label: "Retrieves a list of sites"
+hide_title: true
+hide_table_of_contents: true
+api: eJylU2Fr2zAQ/SvmfdpA1EmatZ2+ldGNQjdGuo1BCUWxz4lW21Klc9Zg9N+LZDdryNiX+YuPu9PTe3dPPVitPeQdbjWTx1LAKqcaYnIx3aNVDUGiMCVBQLeQsIo3ECjJF05b1iYm4/ls7HL02GlHJSS7jgR8saFGQfbgnY1onp1u1whhGZu9Na0nH+uzyST+jqEhUJiWqeVYV9bWulCxnv/ysakHPanG1gPMGMdwq+ouBaXiRCFxlPh8ubi9ur65uYqqSkicXcyq0+p8fraazt6flqvpxYzenU9mEGiJfxv3cN+oVq3J3ad+hOETmE/mx6S/GM4q07Xl/zP3rLjzkPPJXKAh79WaDm7YMzmksCB2mrbkM5XV2nNmqsynNUcY3pgoY00MMaxUIk/lvI8zChDw5LYvRuhcDYkNs/Uyz3vfrUrTKN2Gk2ZXPFXaeT4pTJMrq/PtFAJb5bRajbr27cOkKtXVDImSGhPpL6O1KpMsojnqx4efHyNmdvn1OvuR8Mj5Qdh2iiBgjedGJcDRpP8SfDCavRGZnji3deQVxCCxH4dxh5ejMllmKbAxnmOh71fK03dXhxDTjx25HeTd8o/mNLFS+xiXkJWqPR1x2NsCbxbji3mbvX5HfyU5JlW7SzNOHgEEHmj38k7DMghsSJXkEpGhdFkUZPnVoSMvxjXsjfHp6htCeAYqsWTN
+sidebar_class_name: "get api-method"
+info_path: docs/cx-api/cxfirst-api-v-1
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Retrieves a list of sites"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/sites/{code}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a list of sites
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"code","in":"path","description":"Site code","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Site","content":{"application/json":{"examples":{"example":{"value":{"data":{"code":"MARSEILLE","id":"682f3f746b1293db182e5702","network_manager_id":""}}}}}}},"404":{"description":"Not found","content":{"application/json":{"examples":{"example":{"value":{"status":404,"message":"Not found"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
