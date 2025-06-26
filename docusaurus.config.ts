@@ -7,13 +7,13 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "CXFirst",
+  tagline: "CXFirst",
+  url: "https://cxfirst.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -56,76 +56,64 @@ const config: Config = {
         },
       },
       navbar: {
-        title: "My Site",
+        title: "CXFirst",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "CXFirst Logo",
+          src: "img/logo.png",
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            label: "API",
+            label: "Documentation",
             position: "left",
             to: "/docs/category/cx-api",
           },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
         ],
       },
-      footer: {
-        style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
+      // footer: {
+      //   style: "dark",
+      //   links: [
+      //     {
+      //       title: "Liens",
+      //       items: [
+      //         {
+      //           label: "CXFirst",
+      //           to: "https://cxfirst.com",
+      //         },
+      //       ],
+      //     },
+      //     // {
+      //     //   title: "Community",
+      //     //   items: [
+      //     //     {
+      //     //       label: "Stack Overflow",
+      //     //       href: "https://stackoverflow.com/questions/tagged/docusaurus",
+      //     //     },
+      //     //     {
+      //     //       label: "Discord",
+      //     //       href: "https://discordapp.com/invite/docusaurus",
+      //     //     },
+      //     //     {
+      //     //       label: "Twitter",
+      //     //       href: "https://twitter.com/docusaurus",
+      //     //     },
+      //     //   ],
+      //     // },
+      //     // {
+      //     //   title: "More",
+      //     //   items: [
+      //     //     {
+      //     //       label: "Blog",
+      //     //       to: "/blog",
+      //     //     },
+      //     //     {
+      //     //       label: "GitHub",
+      //     //       href: "https://github.com/facebook/docusaurus",
+      //     //     },
+      //     //   ],
+      //     // },
+      //   ],
+      //   copyright: `Copyright © ${new Date().getFullYear()} CXFirst, Inc. Built with Docusaurus.`,
+      // },
       prism: {
         additionalLanguages: [
           "ruby",
@@ -152,21 +140,6 @@ const config: Config = {
           logoClass: "curl",
         },
         {
-          highlight: "csharp",
-          language: "csharp",
-          logoClass: "csharp",
-        },
-        {
-          highlight: "go",
-          language: "go",
-          logoClass: "go",
-        },
-        {
-          highlight: "javascript",
-          language: "nodejs",
-          logoClass: "nodejs",
-        },
-        {
           highlight: "ruby",
           language: "ruby",
           logoClass: "ruby",
@@ -177,40 +150,9 @@ const config: Config = {
           logoClass: "php",
         },
         {
-          highlight: "java",
-          language: "java",
-          logoClass: "java",
-          variant: "unirest",
-        },
-        {
-          highlight: "powershell",
-          language: "powershell",
-          logoClass: "powershell",
-        },
-        {
-          highlight: "dart",
-          language: "dart",
-          logoClass: "dart",
-        },
-        {
           highlight: "javascript",
           language: "javascript",
           logoClass: "javascript",
-        },
-        {
-          highlight: "c",
-          language: "c",
-          logoClass: "c",
-        },
-        {
-          highlight: "objective-c",
-          language: "objective-c",
-          logoClass: "objective-c",
-        },
-        {
-          highlight: "ocaml",
-          language: "ocaml",
-          logoClass: "ocaml",
         },
         {
           highlight: "r",
@@ -218,19 +160,9 @@ const config: Config = {
           logoClass: "r",
         },
         {
-          highlight: "swift",
-          language: "swift",
-          logoClass: "swift",
-        },
-        {
-          highlight: "kotlin",
-          language: "kotlin",
-          logoClass: "kotlin",
-        },
-        {
-          highlight: "rust",
-          language: "rust",
-          logoClass: "rust",
+          highlight: "csharp",
+          language: "csharp",
+          logoClass: "csharp",
         },
       ],
     } satisfies Preset.ThemeConfig,
@@ -245,8 +177,7 @@ const config: Config = {
           cxfirst: {
             specPath: "examples/cx-api.yaml",
             outputDir: "docs/cx-api",
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/cx-api.yaml",
+            downloadUrl: undefined,
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",

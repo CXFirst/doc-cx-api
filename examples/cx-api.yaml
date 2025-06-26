@@ -9,6 +9,8 @@ paths:
       summary: Retrieves the list of configured hierarchies
       tags:
       - Hierarchies
+      security:
+      - bearerAuth: []
       responses:
         '200':
           description: Hierarchies
@@ -34,6 +36,8 @@ paths:
       summary: Retrieves a hierarchy by slug
       tags:
       - Hierarchies
+      security:
+      - bearerAuth: []
       parameters:
       - name: slug
         in: path
@@ -75,6 +79,8 @@ paths:
       summary: Retrieve a hierarchy branch by slug
       tags:
       - Hierarchies
+      security:
+      - bearerAuth: []
       parameters:
       - name: hierarchy_slug
         in: path
@@ -120,6 +126,8 @@ paths:
       summary: Retrieves the list of sites
       tags:
       - Sites
+      security:
+      - bearerAuth: []
       parameters:
       - name: code
         in: query
@@ -146,26 +154,25 @@ paths:
                   value:
                     data:
                     - code: LADEFENSE
-                      id: 682f3f736b1293db182e56eb
-                      network_manager_id: ''
+                      title: AXA IMP
                     - code: ROUBAIX
-                      id: 682f3f746b1293db182e56ef
-                      network_manager_id: ''
+                      title: AXA IMP
                     - code: MARSEILLE
-                      id: 682f3f746b1293db182e56f0
-                      network_manager_id: ''
+                      title: AXA IMP
                     meta:
                       total: 3
                       total_pages: 1
                       current_page: 1
                       per_page: 5
-                      next: 
-                      previous: 
+                      next:
+                      previous:
   "/sites/{code}":
     get:
       summary: Retrieves a list of sites
       tags:
       - Sites
+      security:
+      - bearerAuth: []
       parameters:
       - name: code
         in: path
@@ -182,9 +189,21 @@ paths:
                 example:
                   value:
                     data:
+                      active: true
+                      checksum: 0f9f22974144f07473bfc1509a0fb4f5aba83a89ed925c72a2b506b7fa14cdfd
                       code: MARSEILLE
-                      id: 682f3f746b1293db182e5702
+                      id: 685cf57d9af7038bcbd559a3
                       network_manager_id: ''
+                      properties:
+                        code: MARSEILLE
+                        id: 685cf57d9af7038bcbd559a3
+                        active: true
+                        title: AXA IMP
+                        id_region:
+                        - R_2
+                        id_agence:
+                        - R_2_4
+                      title: AXA IMP
         '404':
           description: Not found
           content:
@@ -199,6 +218,8 @@ paths:
       summary: List pages
       tags:
       - Pages
+      security:
+      - bearerAuth: []
       parameters:
       - name: stream_slug
         in: path
@@ -234,6 +255,8 @@ paths:
       summary: show page
       tags:
       - Pages
+      security:
+      - bearerAuth: []
       parameters:
       - name: stream_slug
         in: path
@@ -275,6 +298,8 @@ paths:
       summary: Get a list of raw data
       tags:
       - Data
+      security:
+      - bearerAuth: []
       parameters:
       - name: stream_slug
         in: path
@@ -312,20 +337,18 @@ paths:
                   value:
                     data:
                     - _links:
-                        self: "/api/v1/streams/sondage/data/682f3f776b1293db182e57eb"
-                        public_url: "/q/j78h31lgdioil574"
-                        show: "/streams/sondage/answers/682f3f776b1293db182e57eb/questionnaire"
-                      created_at: '2025-05-22T17:15:03.037+02:00'
-                      date: '2025-05-22'
+                        self: "/api/v1/streams/sondage/data/685cf57f9af7038bcbd55a8c"
+                        public_url: "/q/3aejccmkx2o2ozlq"
+                        show: "/streams/sondage/answers/685cf57f9af7038bcbd55a8c/questionnaire"
+                      created_at: '2025-06-26T09:23:43.445+02:00'
+                      date: '2025-06-26'
                       has_alert: false
-                      id: 682f3f776b1293db182e57eb
+                      id: 685cf57f9af7038bcbd55a8c
                       site:
                         code: LADEFENSE
-                        id: 682f3f766b1293db182e57ca
-                        network_manager_id: ''
                       state: Non traitée
                       unique_identifier: unique_id_1_1
-                      user: 
+                      user:
                       values:
                         CITY: LADEFENSE
                         entry_header: '1'
@@ -333,20 +356,18 @@ paths:
                         PLAY_UNO: '1'
                         PLAY_MONOPOLY: '1'
                     - _links:
-                        self: "/api/v1/streams/sondage/data/682f3f776b1293db182e57f6"
-                        public_url: "/q/bhvsvgx1v45gd2ly"
-                        show: "/streams/sondage/answers/682f3f776b1293db182e57f6/questionnaire"
-                      created_at: '2025-05-22T17:15:03.154+02:00'
-                      date: '2025-05-22'
+                        self: "/api/v1/streams/sondage/data/685cf57f9af7038bcbd55a97"
+                        public_url: "/q/d2gowgzg04y7roi9"
+                        show: "/streams/sondage/answers/685cf57f9af7038bcbd55a97/questionnaire"
+                      created_at: '2025-06-26T09:23:43.590+02:00'
+                      date: '2025-06-26'
                       has_alert: true
-                      id: 682f3f776b1293db182e57f6
+                      id: 685cf57f9af7038bcbd55a97
                       site:
                         code: LADEFENSE
-                        id: 682f3f766b1293db182e57ca
-                        network_manager_id: ''
                       state: Non traitée
                       unique_identifier: unique_id_2_2
-                      user: 
+                      user:
                       values:
                         CITY: LADEFENSE
                         entry_header: '1'
@@ -358,8 +379,8 @@ paths:
                       total_pages: 0
                       current_page: 1
                       per_page: 50
-                      next: 
-                      previous: 
+                      next:
+                      previous:
         '404':
           description: Not found
           content:
@@ -374,6 +395,8 @@ paths:
       summary: Retrieves a list of streams
       tags:
       - Streams
+      security:
+      - bearerAuth: []
       responses:
         '200':
           description: Streams
@@ -395,6 +418,8 @@ paths:
       summary: Retrieve the stream information
       tags:
       - Streams
+      security:
+      - bearerAuth: []
       parameters:
       - name: slug
         in: path
@@ -433,6 +458,14 @@ paths:
                   value:
                     status: 404
                     message: Not found
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+- bearerAuth: []
 servers:
 - url: https://{subdomain}.mycxfirst.com/api/v1
   variables:
