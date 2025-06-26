@@ -9,7 +9,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 const config: Config = {
   title: "CXFirst",
   tagline: "CXFirst",
-  url: "https://cxfirst.com",
+  url: "https://dev.cxfirst.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -17,8 +17,9 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "CXFirst", // Usually your GitHub org/user name.
+  projectName: "doc-cx-api", // Usually your repo name.
+  deploymentBranch: 'master',
 
   presets: [
     [
