@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcx_api_doc=self.webpackChunkcx_api_doc||[]).push([[9725],{73313:s=>{s.exports=JSON.parse('{"tag":{"label":"test","permalink":"/docs/tags/test","allTagsPath":"/docs/tags","count":1,"items":[{"id":"intro","title":"Tutorial Intro","description":"Let\'s discover Docusaurus in less than 5 minutes.","permalink":"/docs/intro"}],"unlisted":false}}')}}]);
